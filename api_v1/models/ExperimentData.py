@@ -2,7 +2,7 @@ from django.db import models
 from .ExperimentFile import ExperimentFile
 import datetime
 
-METHOD_CHOICE = sorted([''])
+METHOD_CHOICE = sorted([('XML', 'xml parser'), ('PLAIN', 'plaintext parser'), ('JSON', 'json parser')])
 
 
 # The parsed data of a BookKeeping Entry file
@@ -34,5 +34,4 @@ class ExperimentData(models.Model):
         self.data = data
 
     def __str__(self):
-        return '[' + self.parsing_method + "; " + self.parsing_datetime.strftime("%Y %m %d") + "]\n\"" + self.data \
-               + "\""
+        return '[' + self.parsing_method + "; " + self.parsing_datetime.strftime("%Y %m %d") + "]\n"

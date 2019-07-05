@@ -1,5 +1,5 @@
 from django.db import models
-from .Experiment import Experiment
+from api_v1.models.Experiment import Experiment
 import datetime
 
 
@@ -42,5 +42,5 @@ class ExperimentFile(models.Model):
         self.file_content = file_content
 
     def __str__(self):
-        return self.title + ":\n[" + self.file_name + "; " + self.file_mime + "]\n" + "\"" + self.file_content + "\""
+        return self.title + ":\n[" + self.file_name + "; " + self.file_mime + "]"
 

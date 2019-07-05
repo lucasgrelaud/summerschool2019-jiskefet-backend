@@ -34,6 +34,6 @@ class Experiment(models.Model):
         self.description = description
 
     def __str__(self):
-        return self.name + ":\n" + self.description + "\n[Start : " + self.start_date.strftime("%Y %m %d") + "; End :" \
+        return self.name + ":" + "\n[Start : " + self.start_date.strftime("%Y %m %d") + "; End :" \
                + self.end_date.strftime("%Y %m %d") + "]"
 
