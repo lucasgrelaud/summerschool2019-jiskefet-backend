@@ -2,14 +2,15 @@ from django.db import models
 from .ExperimentFile import ExperimentFile
 import datetime
 
+METHOD_CHOICE = sorted([''])
+
 
 # The parsed data of a BookKeeping Entry file
 class ExperimentData(models.Model):
     experiment_file = models.ForeignKey(ExperimentFile, on_delete=models.CASCADE, default=-1)
     parsing_datetime = models.DateTimeField(auto_now=True)  # Datetime of when the file have been parsed
     parsing_method = models.CharField(max_length=50, default='', blank=False)  # The parsing method used to process the file content
-    # TODO : Add Feild.choice to the parsing_method field
-    data = models.TextField(default='', blank=False)
+    data = models.TextField(choices=METHOD_CHOICE, default='', blank=False)
 
     def get_experiment_file(self) -> ExperimentFile:
         return self.experiment_file
