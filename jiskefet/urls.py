@@ -36,8 +36,8 @@ router.register(r'users', UserViewSet)
 schema_view = get_schema_view(title='Jiskefet API', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer])
 
 urlpatterns = [
-	url(r'^', schema_view, name="docs"),
-	url(r'^users/', include(router.urls)),
+	url('swagger/', schema_view, name="docs"),
+	url('users/', include(router.urls)),
 	url('v1/', include('api_v1.urls')),
     path('admin/', admin.site.urls),
 ]
