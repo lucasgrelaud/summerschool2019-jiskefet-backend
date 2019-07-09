@@ -6,10 +6,6 @@ from api_v1.models import Experiment
 from api_v1.serializers import ExperimentSerializer
 
 
-def index(request):
-    return HttpResponse("The API V1 is Working")
-
-
 @csrf_exempt
 def experiment_list(request):
     """

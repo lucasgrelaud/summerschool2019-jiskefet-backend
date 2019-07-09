@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from api_v1.models.ExperimentFile import ExperimentFile
+from ..models.ExperimentData import ExperimentData
 
 
-class ExperimentFileSerializer(serializers.ModelSerializer):
+class ExperimentDataSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ExperimentFile
-        fields = ('experiment', 'title', 'file_name', 'file_mime', 'file_content')
+        model = ExperimentData
+        fields = ('experiment_file', 'parsing_datetime', 'parsing_method', 'data')
