@@ -12,6 +12,10 @@ class ExperimentData(models.Model):
     parsing_method = models.CharField(max_length=50, default='', blank=False)  # The parsing method used to process the file content
     data = models.TextField(choices=METHOD_CHOICE, default='', blank=False)
 
+    class Meta:
+        ordering = ['-id']
+
+
     def get_experiment_file(self) -> ExperimentFile:
         return self.experiment_file
 

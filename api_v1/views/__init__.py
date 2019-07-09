@@ -1,7 +1,5 @@
-from .GenericView import *
-from .ExperimentView import *
-from .ExperimentFileView import *
-from .ExperimentDataView import *
+from .ExperimentViewSet import ExperimentViewSet
+from .ExperimentFileViewSet import ExperimentFileViewSet
+from .ExperimentDataViewSet import ExperimentDataViewSet
 
-__all__ = ['experiment_list', 'experiment_detail', 'experiment_file_list', 'experiment_file_detail',
-           'experiment_data_list', 'experiment_data_detail']
+__all__ = ['ExperimentViewSet', 'ExperimentFileViewSet', 'ExperimentDataViewSet']

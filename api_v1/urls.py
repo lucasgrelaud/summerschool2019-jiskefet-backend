@@ -1,13 +1,12 @@
-from django.urls import path
-
+from django.urls import include, path
+from rest_framework import routers
 from . import views
 
+router = routers.DefaultRouter()
+router.register(r'experiments', views.ExperimentViewSet)
+router.register(r'file', views.ExperimentFileViewSet)
+router.register(r'data', views.ExperimentDataViewSet)
+
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('experiments/', views.experiment_list),
-    path('experiments/<int:pk>/', views.experiment_detail),
-    path('file/', views.experiment_file_list),
-    path('file/<int:pk>/', views.experiment_file_detail),
-    path('data/', views.experiment_data_list),
-    path('data/<int:pk>/', views.experiment_data_detail)
+    path('', include(router.urls)),
 ]

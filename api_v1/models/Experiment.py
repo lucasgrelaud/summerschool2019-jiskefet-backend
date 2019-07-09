@@ -9,6 +9,9 @@ class Experiment(models.Model):
     start_date = models.DateField(default='', blank=False)
     end_date = models.DateField(default='', blank=True)
 
+    class Meta:
+        ordering = ['-id']
+
     def get_name(self) -> str:
         return self.name
 

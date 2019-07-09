@@ -11,6 +11,10 @@ class ExperimentFile(models.Model):
     file_mime = models.CharField(default='', max_length=100, blank=False)
     file_content = models.TextField(default='', blank=False)
 
+    class Meta:
+        ordering = ['-id']
+
+
     def get_experiment_id(self) -> Experiment:
         return self.experiment
 
