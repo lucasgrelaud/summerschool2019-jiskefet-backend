@@ -24,7 +24,8 @@ This part contain the **backend** of Jiskefet project.
 # Server installation
 
 
-There is the **installation process from scratch** of the RedHad server we use.
+> There is the **installation process from scratch** of the RedHad
+> server we use.
 
 First, you need to update repo : 
 
@@ -43,12 +44,16 @@ We will need **python3** to use Django, run those command to install it
 
 ## Create Django application
 
-Django is a python framework used to create and manage REST API, more information [here](https://www.djangoproject.com/start/overview/), run those command to install it :
+> Django is a python framework used to create and manage REST API, more
+> information [here](https://www.djangoproject.com/start/overview/)
+
+Run those command to install it :
 
 **If your use the project on this git repo**
 
     cd ~/
-    git clone git@github.com:SoftwareForScience/summerschool2019-jiskefet-backend.git \ jiskefet-backend && cd jiskefet-backend
+    git clone git@github.com:SoftwareForScience/summerschool2019-jiskefet-backend.git \ jiskefet-backend
+    cd jiskefet-backend
     sudo python3 -m pip install django
     python3 -m venv djangoenv
     source djangoenv/bin/activate
@@ -113,7 +118,8 @@ Now you're able to **acces to your Django interface** at [http://(host):8000](ht
 
 ## Install httpd
 
-httpd is used to install needed components for a **apache2 webserver**,  certbot is used for https
+> httpd is used to install needed components for a **apache2
+> webserver**,  certbot is used for https
 
     sudo yum install httpd httpd-devel
     sudo yum install certbot python2-certbot-apache
@@ -130,7 +136,10 @@ httpd is used to install needed components for a **apache2 webserver**,  certbot
 
 ## Install PostgreSQL
 
-We use a **PostgreSQL database** to store and manage easily file's data and metadata because we can't predict data model, run thoses commands tho install PostgreSQL on your server
+> We use a **PostgreSQL database** to store and manage easily file's
+> data and metadata because we can't predict data model
+
+Run thoses commands tho install PostgreSQL on your server
 
     sudo yum install postgresql-server postgresql-contrib postgresql-devel
     sudo postgresql-setup initdb
