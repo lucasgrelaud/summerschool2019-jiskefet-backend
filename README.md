@@ -178,3 +178,62 @@ If it's well done, you'll be able to launch your server and **acces to your Djan
 As your local environment is used to develop, you may need to switch to develop branch :
 
     git checkout develop 
+
+# Use Swagger
+
+If you've correctely install and create the project, you are able to acces to your Django interface. Also, you have install [Swagger](https://swagger.io/).
+
+> Swagger is an open-source software framework that helps to
+> design and build REST API
+
+This is a [exemple](https://petstore.swagger.io/) of what Swagger is able to do.
+
+To configure swagger you need to do this :
+
+> We use User API as a exemple
+
+In *settings.py*
+
+
+    INSTALLED_APPS = [ 
+    	#[django core apps] 
+    	... 
+    	'rest_framework', 
+    	'rest_framework_swagger', 
+    ] 
+
+    ... 
+    
+    REST_FRAMEWORK = {
+	    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+	    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication',),
+	}
+
+In urls.py
+
+    from django.conf.urls import url, include 
+    from django.contrib.auth.models import User
+    from rest_framework import routers, serializers, viewsets 
+    class 
+    from rest_framework.schemas import get_schema_view
+    from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
+
+    UserSerializer(serializers.HyperlinkedModelSerializer):  
+	    class Meta: 
+		    model = User 
+			fields = ('url', 'username', 'email', 'is_staff') 
+			
+	class UserViewSet(viewsets.ModelViewSet):
+		queryset = User.objects.all()
+		serializer_class = UserSerializer 
+	
+	router = routers.DefaultRouter()
+	router.register(r'users', UserViewSet)
+	
+	schema_view = get_schema_view(title='Users API', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer])
+	 
+	urlpatterns = [
+		url('swagger/', schema_view, name="docs"),, 
+		url('users/', include(router.urls)), 
+	]
+Now if you acces to [http://localhost:8000/swagger](http://localhost:8000/swagger) to will be able to display the swagger interface with the User API exemple
