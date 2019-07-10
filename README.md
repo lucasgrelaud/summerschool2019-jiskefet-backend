@@ -117,7 +117,7 @@ httpd is used to install needed components for a **apache2 webserver **
 
 ## Install PostgreSQL
 
-We use a **PostgreSQL database** to store and manage easily file's data and metadata because we can't predict data model, run thoses commands tho install PostgreSQL on your server
+We use a **PostgreSQL database** to store and manage easily file's data and metadata because we can't predict data model, run those command to install PostgreSQL on your server
 
     sudo yum install postgresql-server postgresql-contrib
     
