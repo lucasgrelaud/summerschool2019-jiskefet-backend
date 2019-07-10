@@ -3,7 +3,7 @@
 
   
 
-This part contain the backend of Jiskefet project.
+This part contain the **backend** of Jiskefet project.
 
 **Server installation**
 
@@ -24,51 +24,51 @@ This part contain the backend of Jiskefet project.
 # Server installation
 
 
-There is the installation process of the RedHad server we use.
+There is the **installation process** of the RedHad server we use.
 
   
 
 ## Install Python
 
-Install python and component in that
-
+We will need **python3** to use Django, run those command to install it
   
 
-sudo yum install epel-release
-
-sudo yum update
-
-sudo yum install python-devel
-
-python-setuptools python3 python36-pip
-
-sudo python3 -m pip install --upgrade pip
-
-sudo python3 -m pip install virtualenv
+    sudo yum install epel-release
+    
+    sudo yum update
+    
+    sudo yum install python-devel
+    
+    python-setuptools python3 python36-pip
+    
+    sudo python3 -m pip install --upgrade pip
+    
+    sudo python3 -m pip install virtualenv
 
   
 
 ## Install Django
 
+Django is a python framework used to create and manage REST API, more information [here](https://www.djangoproject.com/start/overview/), run those command to install it :
   
 
-virtualenv djangoenv
-
-source ~/djangoenv/bin/activate
-
-sudo python3 -m pip install django
-
-sudo python3 -m pip install djangorestframework
-
-sudo python3 -m pip install django-rest-swagger
-
-sudo python3 -m pip install psycopg2
-
-django-admin startproject jiskefet
-
-python3 manage.py migrate
-
-python3 manage.py createsuperuser
+    virtualenv djangoenv
+    
+    source ~/djangoenv/bin/activate
+    
+    sudo python3 -m pip install django
+    
+    sudo python3 -m pip install djangorestframework
+    
+    sudo python3 -m pip install django-rest-swagger
+    
+    sudo python3 -m pip install psycopg2
+    
+    django-admin startproject jiskefet
+    
+    python3 manage.py migrate
+    
+    python3 manage.py createsuperuser
 
   
 
@@ -76,55 +76,56 @@ python3 manage.py createsuperuser
 
   
 
-To run Django server, you need to run this command :
+To run Django, you need to run this command :
 
   
 
-python3 manage.py runserver 0.0.0.0:8000
+    python3 manage.py runserver 0.0.0.0:8000
 
   
 
-Django use the port 8000, if it's not open on your server, you'll need to do this :
+**Django use the port 8000**, if it's not open on your server, you'll need to do this :
 
   
 
-sudo firewall-cmd --zone=public --permanent --add-port=8000/tcp
-
-sudo firewall-cmd --reload
+    sudo firewall-cmd --zone=public --permanent --add-port=8000/tcp
+    
+    sudo firewall-cmd --reload
 
   
 
-Now you're able to acces to your Django interface at [http://(host):8000](http://host:8000).
+Now you're able to **acces to your Django interface** at [http://(host):8000](http://host:8000).
 
   
 
 ## Install httpd
 
+httpd is used to install needed components for a **apache2 webserver **
+
+    sudo yum install httpd
+    
+    sudo service httpd start
+
+**httpd use the port 80**, if it's not open on your server, you'll need to do this :
   
 
-sudo yum install httpd
-
-sudo service httpd start
-
-httpd use the port 80, if it's not open on your server, you'll need to do this :
-
-  
-
-sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
-
-sudo firewall-cmd --reload
+    sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+    
+    sudo firewall-cmd --reload
 
   
 
 ## Install PostgreSQL
 
-sudo yum install postgresql-server postgresql-contrib
+We use a **PostgreSQL database** to store and manage easily file's data and metadata because we can't predict data model, run thoses commands tho install PostgreSQL on your server
 
-sudo postgresql-setup initdb
-
-sudo systemctl start postgresql
-
-sudo systemctl enable postgresql
+    sudo yum install postgresql-server postgresql-contrib
+    
+    sudo postgresql-setup initdb
+    
+    sudo systemctl start postgresql
+    
+    sudo systemctl enable postgresql
 
 # Setup your environment
 
@@ -143,5 +144,5 @@ After that, open a prompt and run this python command :
 
     pip install -r requirements.txt
 
-If it's well done, you'll be able to launch your server and acces to your Django interface at [http://localhost:8000](http://localhost:8000).
+If it's well done, you'll be able to launch your server and **acces to your Django interface** at [http://localhost:8000](http://localhost:8000).
 
