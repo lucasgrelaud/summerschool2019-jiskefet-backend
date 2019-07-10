@@ -5,6 +5,8 @@
 
 This part contain the **backend** of Jiskefet project.
 
+## Summary
+
 **Server installation**
 
 1. Install Python
@@ -18,6 +20,7 @@ This part contain the **backend** of Jiskefet project.
 5. Install PostgreSQL
 
 **Setup your environment**
+**Use Swagger**
 
   
 
@@ -209,7 +212,7 @@ In *settings.py*
 	    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication',),
 	}
 
-In urls.py
+In *urls.py*
 
     from django.conf.urls import url, include 
     from django.contrib.auth.models import User
