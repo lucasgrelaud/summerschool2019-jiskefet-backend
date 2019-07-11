@@ -7,21 +7,20 @@ This part contain the **backend** of Jiskefet project.
 
 ## Summary
 
-**Server installation**
+- **Server installation**
 
-1. Install Python
+	1. Install Python
 
-2. Install Django
+	2. Install Django
 
-3. Launch Django
+	3. Launch Django
 
-4. Install httpd
+	4. Install httpd
 
-5. Install PostgreSQL
+	5. Install PostgreSQL
 
-**Setup your environment**
-
-**Use Swagger**
+- **Setup your environment**
+- **Use Swagger**
 
   
 
