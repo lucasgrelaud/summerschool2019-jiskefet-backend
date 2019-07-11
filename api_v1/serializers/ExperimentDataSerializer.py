@@ -7,4 +7,4 @@ class ExperimentDataSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ExperimentData
-        fields = ('experiment_file', 'parsing_datetime', 'parsing_method', 'data')
+        fields = ('id','experiment_file', 'parsing_datetime', 'parsing_method', 'data')
