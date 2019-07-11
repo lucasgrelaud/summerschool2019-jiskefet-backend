@@ -14,7 +14,6 @@ class ExperimentFile(models.Model):
     class Meta:
         ordering = ['-id']
 
-
     def get_experiment_id(self) -> Experiment:
         return self.experiment
 
@@ -27,7 +26,7 @@ class ExperimentFile(models.Model):
     def get_file_mime(self) -> str:
         return self.file_mime
 
-    def get_file_content(self) -> str:
+    def get_file_content(self):
         return self.file_content
 
     def set_experiment(self, experiment: Experiment):
