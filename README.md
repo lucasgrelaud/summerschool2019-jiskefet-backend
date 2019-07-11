@@ -117,7 +117,7 @@ To run Django, you need to run this command :
 
 Now you're able to **acces to your Django interface** at [http://(host):8000](http://host:8000).
 
-  
+  ![Django interface](https://www.javatpoint.com/django/images/django-admin-interface.png)
 
 ## Install httpd
 
@@ -136,6 +136,10 @@ Now you're able to **acces to your Django interface** at [http://(host):8000](ht
     sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
     sudo firewall-cmd --zone=public --add-port=443/tcp --permanent
     sudo firewall-cmd --reload
+
+You can now acces to your web server at [http://host](http://host)
+
+![Apache2 default page](https://connectwww.com/wp-content/uploads/2011/02/Apache2-Ubuntu-Default-Page-It-works-.jpg)
 
 ## Install PostgreSQL
 
@@ -240,3 +244,5 @@ In *urls.py*
 		url('users/', include(router.urls)), 
 	]
 Now if you acces to [http://localhost:8000/swagger](http://localhost:8000/swagger) to will be able to display the swagger interface with the User API exemple
+
+![Swagger default Users API](https://hirelofty-prod.s3.amazonaws.com/media/images/users_api.width-1920.png)
